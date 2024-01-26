@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# while loop with conditional - -bash
+
+MSG="Best School"
+
+i=9
+while [ "$i" -ge 0 ]; do
+	echo -e "$MSG"
+	if [ "$i" -eq 1 ]; then
+		echo -e "Hi"
+	fi
+	i="$((i-1))"
+done

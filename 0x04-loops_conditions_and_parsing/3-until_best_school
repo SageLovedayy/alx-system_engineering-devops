@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# until loop - bash
+
+MSG="Best School"
+
+i=10
+until [ "$i" -lt 1 ]; do
+	echo -e "$MSG"
+	i="$((i-1))"
+done
