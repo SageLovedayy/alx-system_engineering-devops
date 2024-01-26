@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 SCRIPT_PATH="$( cd "$(dirname "$0")" || exit ; pwd -P )"
 PROCESS_NAME="manage_my_process"
