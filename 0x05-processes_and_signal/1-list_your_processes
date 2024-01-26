@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# show all processes (a) for all users(u), with or without TTY (x), show heirachy (f)
+
+ps -auxf
