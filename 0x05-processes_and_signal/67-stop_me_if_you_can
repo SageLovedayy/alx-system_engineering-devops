@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# Kill script
-
-PROCESS_TO_KILL="7-highlander"
-
-pkill -f "${PROCESS_TO_KILL}"
