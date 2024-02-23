@@ -10,5 +10,5 @@ i=0
 for arg in "$@"; do
 	[[ $i -ge 1 ]] && echo -e
 	ping -c 5 "$arg"
-	i+=1
+	((i++))
 done
