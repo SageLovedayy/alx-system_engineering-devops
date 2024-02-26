@@ -80,7 +80,7 @@ Enhanced infrastructure with security measures and monitoring capabilities for i
 
 ## 3. Scale Up
 
-![Scale Up](https://imgur.com/Qm3d5jn)
+![Scale Up](public/assets/simple-web-stack.png)
 
 ### Overview
 Scaling up the infrastructure by splitting components and configuring load balancers for high availability.
