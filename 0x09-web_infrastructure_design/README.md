@@ -1,6 +1,6 @@
 ## 0. Simple Web Stack
 
-![Simple Web Infrastructure](https://imgur.com/iJW7jNH)
+![Simple Web Infrastructure](public/assets/simple-web-stack.png)
 
 ### Overview
 A lot of websites rely on simple web infrastructure, often composed of a single server with a LAMP stack. In this scenario, we design a one-server web infrastructure hosting a website reachable via www.foobar.com.
@@ -28,7 +28,7 @@ A lot of websites rely on simple web infrastructure, often composed of a single 
 
 ## 1. Distributed Web Infrastructure
 
-![Distributed Web Infrastructure](https://imgur.com/BinLZmU)
+![Distributed Web Infrastructure](public/assets/distributed-web-architecture.png)
 
 ### Overview
 This design expands the infrastructure to accommodate higher traffic and ensure fault tolerance.
@@ -55,7 +55,7 @@ This design expands the infrastructure to accommodate higher traffic and ensure 
 
 ## 2. Secured and Monitored Web Infrastructure
 
-![Secured and Monitored Web Infrastructure](https://imgur.com/rAZuDqi)
+![Secured and Monitored Web Infrastructure](public/assets/secured-and-monitored.png)
 
 ### Overview
 Enhanced infrastructure with security measures and monitoring capabilities for improved reliability and performance.
@@ -80,7 +80,7 @@ Enhanced infrastructure with security measures and monitoring capabilities for i
 
 ## 3. Scale Up
 
-![Scale Up](public/assets/simple-web-stack.png)
+![Scale Up](public/assets/scale-up.png)
 
 ### Overview
 Scaling up the infrastructure by splitting components and configuring load balancers for high availability.
