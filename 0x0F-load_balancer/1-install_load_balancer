@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+# Install load balancer
+
+echo "Starting load balancer setup..."
+
+function install() {
+    command -v "$1" &> /dev/null
+
+    # Check if the command exists
+    if [ $? -ne 0 ]; then
+        echo "Installing: $1..."
+        sudo apt-get update -y -qq && \
+            sudo apt-get install -y "$1" -qq
+        echo "Installation complete."
+    else
+        echo "${1} is already installed."
+    fi
+}
+
+# Install HAProxy
+install haproxy
+
+echo -e "\nSetting up HAProxy configurations...\n"
+
+# Backup default HAProxy configuration file
+sudo cp /etc/haproxy/haproxy.cfg haproxy_default.backup
+
+# Define HAProxy server configuration
+server_config="
+defaults
+  mode http
+  timeout client 15s
+  timeout connect 10s
+  timeout server 15s
+  timeout http-request 10s
+
+frontend sageloveday-tech-frontend
+    bind *:80
+    default_backend sageloveday-tech-backend
+
+backend sageloveday-tech-backend
+    balance roundrobin
+    server 516987-web-01 35.175.126.21:80 check
+    server 516987-web-02 35.153.33.200:80 check
+"
+
+# Apply HAProxy server configuration
+echo "Applying HAProxy server configuration..."
+echo "$server_config" | sudo dd status=none of=/etc/haproxy/haproxy.cfg
+echo "Configuration applied."
+
+# Enable HAProxy to be started by init script
+echo "Enabling HAProxy..."
+echo "ENABLED=1" | sudo dd status=none of=/etc/default/haproxy
+echo "HAProxy enabled."
+
+# Start or restart HAProxy service
+if [ "$(pgrep -c haproxy)" -le 0 ]; then
+    echo "Starting HAProxy service..."
+    sudo service haproxy start
+else
+    echo "Restarting HAProxy service..."
+    sudo service haproxy restart
+fi
+
+echo "Load balancer setup completed successfully."
