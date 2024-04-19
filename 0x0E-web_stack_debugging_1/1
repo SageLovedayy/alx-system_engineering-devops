@@ -1,4 +1,0 @@
-Nginx is not running. Starting...
-Job for nginx.service failed because the control process exited with error code.
-See "systemctl status nginx.service" and "journalctl -xeu nginx.service" for details.
-Nginx is not listening on port 80. Please check the configuration and service status.
